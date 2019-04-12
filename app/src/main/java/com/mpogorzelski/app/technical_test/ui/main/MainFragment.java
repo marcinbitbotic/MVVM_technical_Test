@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.google.gson.Gson;
 import com.mpogorzelski.app.technical_test.AccountListAdapter;
@@ -30,6 +31,8 @@ public class MainFragment extends Fragment {
     private MainViewModel mViewModel;
     private AccountListAdapter mAdapter;
     private RecyclerView mRecyclerView;
+    private Button allBtn;
+    private Button onlyVisibleBtn;
     
     @Nullable
     @Override
@@ -42,6 +45,8 @@ public class MainFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         mRecyclerView = view.findViewById(R.id.recyclerView);
+        allBtn = view.findViewById(R.id.filter_one);
+        onlyVisibleBtn = view.findViewById(R.id.filter_two);
         setUpRecyclerView();
     }
     
