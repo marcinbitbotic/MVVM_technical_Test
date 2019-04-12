@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/main"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".ui.main.MainFragment">
+
+	<!--<LinearLayout-->
+		<!--android:id="@+id/linearLayout2"-->
+		<!--android:layout_width="0dp"-->
+		<!--android:layout_height="60dp"-->
+		<!--android:orientation="horizontal"-->
+		<!--app:layout_constraintStart_toStartOf="parent"-->
+		<!--app:layout_constraintTop_toTopOf="parent"-->
+		<!--app:layout_constraintEnd_toEndOf="parent">-->
+
+		<!--<Button-->
+			<!--android:id="@+id/filter_one"-->
+			<!--android:layout_width="wrap_content"-->
+			<!--android:layout_height="wrap_content"-->
+			<!--android:text="Button"-->
+			<!--app:layout_constraintTop_toTopOf="parent"-->
+			<!--app:layout_constraintStart_toStartOf="parent"-->
+			<!--app:layout_constraintEnd_toStartOf="@+id/filter_two"/>-->
+		<!---->
+		<!--<Button-->
+			<!--android:id="@+id/filter_two"-->
+			<!--android:layout_width="wrap_content"-->
+			<!--android:layout_height="wrap_content"-->
+			<!--android:text="Button"-->
+			<!--app:layout_constraintTop_toTopOf="@+id/filter_one"-->
+			<!--app:layout_constraintStart_toEndOf="@+id/filter_one"-->
+			<!--app:layout_constraintEnd_toEndOf="parent"/>-->
+		<!---->
+	<!--</LinearLayout>-->
+
+	<Button
+		android:id="@+id/filter_one"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Button"
+		app:layout_constraintEnd_toStartOf="@+id/filter_two"
+		app:layout_constraintHorizontal_chainStyle="packed"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<Button
+		android:id="@+id/filter_two"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Button"
+		app:layout_constraintTop_toTopOf="@+id/filter_one"
+		app:layout_constraintStart_toEndOf="@+id/filter_one"
+		app:layout_constraintEnd_toEndOf="parent"/>
+
+	<TextView
+		android:id="@+id/errorText"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_centerHorizontal="true"
+		android:layout_centerInParent="true"
+		android:indeterminateTint="@color/colorPrimary"
+		android:indeterminateTintMode="src_in"
+		android:textSize="16sp"
+		android:textStyle="bold"
+		app:layout_constraintBottom_toTopOf="@+id/errorText1"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintVertical_chainStyle="spread" />
+
+	<TextView
+		android:id="@+id/errorText1"
+		android:layout_width="0dp"
+		android:layout_height="wrap_content"
+		android:layout_centerHorizontal="true"
+		android:layout_centerInParent="true"
+		android:indeterminateTint="@color/colorPrimary"
+		android:indeterminateTintMode="src_in"
+		android:textSize="16sp"
+		android:textStyle="bold"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/errorText"
+		android:visibility="gone"/>
+
+
+	<android.support.v7.widget.RecyclerView
+		android:id="@+id/recyclerView"
+		android:layout_width="0dp"
+		android:layout_height="0dp"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintStart_toStartOf="@+id/errorText"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/filter_one"/>
+
+</android.support.constraint.ConstraintLayout>
