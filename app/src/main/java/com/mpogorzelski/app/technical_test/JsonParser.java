@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 
 /**
- * Created by mpogorzelskil on 10/04/2019.
+ * Created by mpogorzelskil on 13/04/2019.
  */
 
 public class JsonParser<Model> {

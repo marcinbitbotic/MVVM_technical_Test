@@ -6,7 +6,7 @@ import android.content.Context;
 import com.mpogorzelski.app.technical_test.repository.AccountsRepository;
 
 /**
- * Created by mpogorzelskil on 10/04/2019.
+ * Created by mpogorzelskil on 13/04/2019.
  */
 
 public class MainViewModelFactory implements ViewModelProvider.Factory {

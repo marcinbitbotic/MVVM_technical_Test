@@ -12,7 +12,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 /**
- * Created by mpogorzelskil on 10/04/2019.
+ * Created by mpogorzelskil on 13/04/2019.
  */
 
 public class AssetsClient<T> {

@@ -19,6 +19,7 @@ import com.mpogorzelski.app.technical_test.AssetsClient;
 import com.mpogorzelski.app.technical_test.JsonParser;
 import com.mpogorzelski.app.technical_test.R;
 import com.mpogorzelski.app.technical_test.data.AccountList;
+import com.mpogorzelski.app.technical_test.data.FilterType;
 import com.mpogorzelski.app.technical_test.repository.AccountsRepository;
 import com.mpogorzelski.app.technical_test.repository.data_source.local.AccountsDataSource;
 
@@ -48,6 +49,21 @@ public class MainFragment extends Fragment {
         allBtn = view.findViewById(R.id.filter_one);
         onlyVisibleBtn = view.findViewById(R.id.filter_two);
         setUpRecyclerView();
+
+        allBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mViewModel.filterAccounts(FilterType.ALL);
+            }
+        });
+
+        onlyVisibleBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mViewModel.filterAccounts(FilterType.ONLY_VISIBLE);
+            }
+        });
+
     }
     
     private void setUpRecyclerView(){
@@ -69,7 +85,7 @@ public class MainFragment extends Fragment {
     
     private void observeViewModel(MainViewModel viewModel) {
         // Update the list when the data changes
-        viewModel.getAccountListData().observe(this, new Observer<AccountList>() {
+        viewModel.getAccountListData().observe(this.getViewLifecycleOwner(), new Observer<AccountList>() {
             @Override
             public void onChanged(@Nullable AccountList accountList) {
                 if (accountList != null) {
