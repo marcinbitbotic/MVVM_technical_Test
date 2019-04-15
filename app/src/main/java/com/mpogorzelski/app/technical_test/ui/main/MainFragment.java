@@ -32,8 +32,6 @@ public class MainFragment extends Fragment {
     private MainViewModel mViewModel;
     private AccountListAdapter mAdapter;
     private RecyclerView mRecyclerView;
-    private Button allBtn;
-    private Button onlyVisibleBtn;
     
     @Nullable
     @Override
@@ -45,25 +43,28 @@ public class MainFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        mRecyclerView = view.findViewById(R.id.recyclerView);
-        allBtn = view.findViewById(R.id.filter_one);
-        onlyVisibleBtn = view.findViewById(R.id.filter_two);
+        setUpLayout(view);
         setUpRecyclerView();
-
+    }
+    
+    private void setUpLayout(@NonNull View view){
+        mRecyclerView = view.findViewById(R.id.recyclerView);
+        Button allBtn = view.findViewById(R.id.filter_one);
+        Button onlyVisibleBtn = view.findViewById(R.id.filter_two);
+    
         allBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mViewModel.filterAccounts(FilterType.ALL);
             }
         });
-
+    
         onlyVisibleBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mViewModel.filterAccounts(FilterType.ONLY_VISIBLE);
             }
         });
-
     }
     
     private void setUpRecyclerView(){
@@ -90,7 +91,6 @@ public class MainFragment extends Fragment {
             public void onChanged(@Nullable AccountList accountList) {
                 if (accountList != null) {
                     mAdapter.setData(accountList);
-                    //mAdapter.notifyDataSetChanged();
                 }
             }
         });

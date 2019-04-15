@@ -64,11 +64,4 @@ public class MainViewModel extends ViewModel {
 		return accountListData;
 	}
 	
-	/*
-	public void setAccountsDataList(List<Account> accountList) {
-		action = ACTION_ADD_ALL;
-		questionDataList.clear();
-		questionDataList.addAll(questionCardDatas);
-	}
-	*/
 }
