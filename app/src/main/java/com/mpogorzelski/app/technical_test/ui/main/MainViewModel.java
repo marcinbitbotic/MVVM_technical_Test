@@ -49,7 +49,6 @@ public class MainViewModel extends ViewModel {
 						return output;
 					}
 				});
-
 	}
 	
 	public void loadAccounts() {
